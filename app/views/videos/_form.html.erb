@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list, class: "ui input" %>
+  </div>
+
+  <div class="field">
     <%= f.label :url %>
     <%= f.text_field :url %>
   </div>
@@ -29,11 +34,6 @@
   <div class="field">
     <%= f.label :approved %>
     <%= f.check_box :approved %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
   </div>
 
   <div class="actions">

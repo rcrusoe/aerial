@@ -3,7 +3,11 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @videos = Video.all
+    if params[:tag]
+      @videos = Video.tagged_with(params[:tag])
+    else
+      @videos = Video.all
+    end
   end
 
   def show
@@ -57,6 +61,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:title, :description, :url, :approved, :user_id)
+      params.require(:video).permit(:title, :description, :url, :approved, :user_id, :tag_list)
     end
 end
