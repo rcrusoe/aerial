@@ -1,0 +1,18 @@
+<p>
+  <strong>User</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+    <strong>User Videos</strong>
+</p>
+<%= @user.videos.each do |video| %>
+    <p>
+        <%= video.title %>
+    </p>
+    <p>
+        <%= video.description %>
+    </p>
+<% end %>
+
+
